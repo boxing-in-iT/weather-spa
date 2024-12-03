@@ -12,6 +12,10 @@ const Header = () => {
     setSearchQuery(query);
   };
 
+  const handleCitySelect = () => {
+    setSearchQuery("");
+  };
+
   return (
     <header className="header">
       <div className="header__logo">
@@ -26,6 +30,7 @@ const Header = () => {
           filteredCities={filteredCities}
           isFetching={isFetching}
           error={!!error}
+          onCitySelect={handleCitySelect}
         />
       </div>
     </header>

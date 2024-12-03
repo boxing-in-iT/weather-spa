@@ -7,12 +7,14 @@ interface SearchResultsProps {
   filteredCities: { name: string; country: string; temperature: number }[];
   isFetching: boolean;
   error: boolean;
+  onCitySelect: () => void;
 }
 
 const SearchResults = ({
   filteredCities,
   isFetching,
   error,
+  onCitySelect,
 }: SearchResultsProps) => {
   const dispatch = useAppDispatch();
 
@@ -23,7 +25,13 @@ const SearchResults = ({
       {filteredCities.length > 0 && (
         <ul>
           {filteredCities.map((city, index) => (
-            <li key={index} onClick={() => dispatch(toggleCities(city))}>
+            <li
+              key={index}
+              onClick={() => {
+                dispatch(toggleCities(city));
+                onCitySelect();
+              }}
+            >
               {city.name}, {city.country} - {toCelsius(city.temperature)}°C
             </li>
           ))}
