@@ -9,7 +9,6 @@ const CityDetailPage = () => {
     currentWeather,
     currentError,
     isCurrentLoading,
-    forecast,
     forecastError,
     isForecastLoading,
     groupedForecast,

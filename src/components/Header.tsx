@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCityWeather } from "../hooks/useCityWeather";
 import { useWeatherData } from "../hooks/useWeatherData";
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";

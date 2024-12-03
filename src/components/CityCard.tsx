@@ -1,7 +1,5 @@
-import React from "react";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { City } from "../types/global";
-import { useGetWeatherByCityQuery } from "../store/aoi/weatherApi";
 import { useCityWeather } from "../hooks/useCityWeather";
 import { toCelsius } from "../utils/toCelcius";
 
@@ -11,9 +9,7 @@ interface CityProps {
 }
 
 const CityCard = ({ city, onRemove }: CityProps) => {
-  const { weatherData, cityError, isLoading } = useCityWeather(city.name);
-
-  const dispatch = useAppDispatch();
+  const { weatherData, cityError } = useCityWeather(city.name);
 
   if (cityError) return <div>Error loading data for {city.name}</div>;
 
