@@ -8,12 +8,14 @@ export const useWeatherDetails = (cityName: string) => {
     data: currentWeather,
     error: currentError,
     isLoading: isCurrentLoading,
+    refetch: refetchCurrentWeather,
   } = useGetWeatherByCityQuery(cityName);
 
   const {
     data: forecast,
     error: forecastError,
     isLoading: isForecastLoading,
+    refetch: refetchForecastWeather,
   } = useGetForecastWeatherQuery(cityName);
 
   const groupedForecast = forecast?.list.reduce(
@@ -34,5 +36,7 @@ export const useWeatherDetails = (cityName: string) => {
     forecastError,
     isForecastLoading,
     groupedForecast,
+    refetchCurrentWeather,
+    refetchForecastWeather,
   };
 };

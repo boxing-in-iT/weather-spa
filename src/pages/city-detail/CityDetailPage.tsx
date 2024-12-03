@@ -12,6 +12,8 @@ const CityDetailPage = () => {
     forecastError,
     isForecastLoading,
     groupedForecast,
+    refetchCurrentWeather,
+    refetchForecastWeather,
   } = useWeatherDetails(name ?? "");
 
   if (currentError || forecastError)
@@ -31,6 +33,18 @@ const CityDetailPage = () => {
       <div className="city-detail-current">
         <h1 className="city-detail-current__title">Weather in {name}</h1>
         <CurrentWeather weatherData={currentWeather} />
+        <div className="city-detaile-current_buttons">
+          <button
+            className="update-button"
+            onClick={() => {
+              refetchCurrentWeather();
+              refetchForecastWeather();
+            }}
+          >
+            Оновити дані
+          </button>
+        </div>
+
         <div className="city-detail-cards">
           <div className="city-detail-cards__title">Forecast</div>
           <Forecast groupedForecast={groupedForecast} />
