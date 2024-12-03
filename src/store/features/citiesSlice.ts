@@ -3,14 +3,12 @@ import { City } from "../../types/global";
 
 interface CitiesState {
   cities: City[];
-  citiy: City;
 }
 
 const initialState: CitiesState = {
   cities: localStorage.getItem("cities")
     ? JSON.parse(localStorage.getItem("cities")!)
     : [],
-  citiy: {} as City,
 };
 
 export const citiesSlice = createSlice({

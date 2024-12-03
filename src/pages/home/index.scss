@@ -1,6 +1,3 @@
-// main.scss
-
-// Переменные
 $primary-color: #4caf50;
 $secondary-color: #f0f0f0;
 $font-family: "Arial", sans-serif;
@@ -8,14 +5,12 @@ $heading-font-size: 2rem;
 $body-font-size: 1rem;
 $padding: 20px;
 
-// Миксин для создания flex-контейнеров
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Базовый стиль для всего приложения
 body {
   font-family: $font-family;
   background-color: $secondary-color;
@@ -28,7 +23,6 @@ a {
   color: inherit;
 }
 
-// Основной контейнер страницы
 .home-container {
   @include flex-center;
   flex-direction: column;
@@ -36,14 +30,12 @@ a {
   padding: $padding;
 }
 
-// Стиль для заголовка
 .home-container h1 {
   font-size: $heading-font-size;
   color: $primary-color;
   margin-bottom: 20px;
 }
 
-// Стиль для кнопки
 .button {
   background-color: $primary-color;
   color: white;
@@ -59,7 +51,6 @@ a {
   }
 }
 
-// Стиль для секции с картами или другой информации
 .home-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -69,7 +60,6 @@ a {
   margin-top: 20px;
 }
 
-// Блок с картой города
 .city-card {
   background-color: white;
   padding: 20px;
@@ -83,7 +73,6 @@ a {
   }
 }
 
-// Мобильная адаптация
 @media (max-width: 768px) {
   .home-container {
     padding: 15px;
@@ -102,8 +91,6 @@ a {
     grid-template-columns: 1fr;
   }
 }
-
-// to card
 
 .remove-icon {
   display: none;
@@ -167,6 +154,7 @@ a {
       li {
         padding: 8px;
         cursor: pointer;
+
         &:hover {
           background-color: #f0f0f0;
         }
@@ -184,6 +172,7 @@ a {
   padding: 20px;
   font-family: Arial, sans-serif;
   color: #333;
+  background-color: white;
 
   .city-detail-current__title {
     font-size: 24px;
@@ -201,6 +190,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     p {
       margin: 0;
       padding: 0;
@@ -214,15 +204,15 @@ a {
 
   .city-detail-cards__content {
     display: flex;
-    justify-content: flex-start; /* Отображение с выравниванием влево */
+    justify-content: flex-start;
     overflow-x: auto;
     gap: 20px;
-    padding-left: 50px; /* Отступ слева, чтобы избежать скрытия первой карточки */
+    padding-left: 50px;
   }
 
   .city-detail-cards__content-card {
     min-width: 250px;
-    background-color: white;
+    background-color: $secondary-color;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

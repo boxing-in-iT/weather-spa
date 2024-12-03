@@ -1,6 +1,11 @@
+import { GroupedForecast } from "../types/weather";
 import { toCelsius } from "../utils/toCelcius";
 
-const Forecast = ({ forecast, groupedForecast }: any) => {
+interface ForecastProps {
+  groupedForecast: GroupedForecast;
+}
+
+const Forecast = ({ groupedForecast }: ForecastProps) => {
   const days = Object.keys(groupedForecast || {}).slice(0, 5);
   return (
     <div className="city-detail-cards__content">

@@ -34,7 +34,7 @@ const CityDetailPage = () => {
         <CurrentWeather weatherData={currentWeather} />
         <div className="city-detail-cards">
           <div className="city-detail-cards__title">Forecast</div>
-          <Forecast forecast={forecast} groupedForecast={groupedForecast} />
+          <Forecast groupedForecast={groupedForecast} />
         </div>
       </div>
     </div>

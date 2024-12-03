@@ -1,8 +1,14 @@
-// components/CurrentWeather.tsx
 import React from "react";
 import { toCelsius } from "../utils/toCelcius";
+import { CurrentWeatherType } from "../types/weather";
 
-const CurrentWeather = ({ weatherData }: any) => {
+interface CurrentWeatherProps {
+  weatherData: CurrentWeatherType;
+}
+
+const CurrentWeather = ({ weatherData }: CurrentWeatherProps) => {
+  console.log("weatherData", weatherData);
+
   return (
     <div className="city-detail-current__content">
       <div className="city-detail-current__content-box">
