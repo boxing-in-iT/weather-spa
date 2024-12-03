@@ -7,15 +7,13 @@ interface SearchInputProps {
 
 const SearchInput = ({ searchQuery, onSearchChange }: SearchInputProps) => {
   return (
-    <div className="header__search">
-      <input
-        type="text"
-        placeholder="Search for a city..."
-        className="header__search-input"
-        value={searchQuery}
-        onChange={(e) => onSearchChange(e.target.value)}
-      />
-    </div>
+    <input
+      type="text"
+      placeholder="Search for a city..."
+      className="header__search-input"
+      value={searchQuery}
+      onChange={(e) => onSearchChange(e.target.value)}
+    />
   );
 };
 

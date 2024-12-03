@@ -18,15 +18,17 @@ const Header = () => {
       <div className="header__logo">
         <Link to={"/"}>WeatherApp</Link>
       </div>
-      <SearchInput
-        searchQuery={searchQuery}
-        onSearchChange={handleSearchChange}
-      />
-      <SearchResults
-        filteredCities={filteredCities}
-        isFetching={isFetching}
-        error={!!error}
-      />
+      <div className="header__search">
+        <SearchInput
+          searchQuery={searchQuery}
+          onSearchChange={handleSearchChange}
+        />
+        <SearchResults
+          filteredCities={filteredCities}
+          isFetching={isFetching}
+          error={!!error}
+        />
+      </div>
     </header>
   );
 };
