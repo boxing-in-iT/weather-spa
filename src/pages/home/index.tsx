@@ -14,12 +14,18 @@ const HomePage = () => {
     dispatch(toggleCities(city));
   };
 
+  console.log("cities", cities);
+
   return (
     <div className="home-container">
       <div className="home-content">
-        {cities.map((city) => (
-          <CityCard key={city.name} city={city} onRemove={handleRemoveCity} />
-        ))}
+        {cities.length > 0 ? (
+          cities.map((city) => (
+            <CityCard key={city.name} city={city} onRemove={handleRemoveCity} />
+          ))
+        ) : (
+          <p className="no-cities-message">Find your city</p>
+        )}
       </div>
     </div>
   );
