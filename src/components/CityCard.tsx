@@ -1,4 +1,3 @@
-import { useAppDispatch } from "../hooks/useAppDispatch";
 import { City } from "../types/global";
 import { useCityWeather } from "../hooks/useCityWeather";
 import { toCelsius } from "../utils/toCelcius";
