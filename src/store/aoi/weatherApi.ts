@@ -9,10 +9,12 @@ export const weatherApi = createApi({
   }),
   endpoints: (builder) => ({
     getWeatherByCity: builder.query({
-      query: (city: string) => `weather?q=${city}&appid=${API_KEY}`, // Получаем координаты города
+      query: (city: string) =>
+        `weather?q=${city}&appid=830e6cfba3a0fb5b39877d118cb488ef`, // Получаем координаты города
     }),
     getForecastWeather: builder.query({
-      query: (city: string) => `forecast?q=${city}&appid=${API_KEY}`,
+      query: (city: string) =>
+        `forecast?q=${city}&appid=830e6cfba3a0fb5b39877d118cb488ef`,
     }),
   }),
 });
