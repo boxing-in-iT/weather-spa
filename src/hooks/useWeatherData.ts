@@ -26,7 +26,7 @@ export const useWeatherData = (searchQuery: string) => {
     } else if (error) {
       setFilteredCities([]);
     }
-  }, [data, error]);
+  }, [data, error, searchQuery]);
 
   console.log("filteredCities", filteredCities);
 

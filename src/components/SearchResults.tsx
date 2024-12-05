@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAppDispatch } from "../hooks/useAppDispatch";
 import { toggleCities } from "../store/features/citiesSlice";
 import { toCelsius } from "../utils/toCelcius";
