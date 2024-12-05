@@ -11,6 +11,11 @@ export const useWeatherData = (searchQuery: string) => {
   });
 
   useEffect(() => {
+    if (!searchQuery) {
+      setFilteredCities([]);
+      return;
+    }
+
     if (data) {
       const cityInfo = {
         name: data.name,
@@ -25,5 +30,5 @@ export const useWeatherData = (searchQuery: string) => {
 
   console.log("filteredCities", filteredCities);
 
-  return { filteredCities, isFetching, error };
+  return { filteredCities, setFilteredCities, isFetching, error };
 };

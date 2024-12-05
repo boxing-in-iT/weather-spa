@@ -17,21 +17,20 @@ const SearchResults = ({
   onCitySelect,
 }: SearchResultsProps) => {
   const dispatch = useAppDispatch();
-  const [results, setResults] = useState(filteredCities);
+  // const [results, setResults] = useState(filteredCities);
 
   return (
     <div className="search-results">
       {isFetching && <p>Loading...</p>}
       {error && <p className="error">City not found</p>}
-      {results.length > 0 && (
+      {filteredCities.length > 0 && (
         <ul>
-          {results.map((city, index) => (
+          {filteredCities.map((city, index) => (
             <li
               key={index}
               onClick={() => {
                 dispatch(toggleCities(city));
                 onCitySelect();
-                setResults([]);
               }}
             >
               {city.name}, {city.country} - {toCelsius(city.temperature)}°C

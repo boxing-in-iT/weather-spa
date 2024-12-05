@@ -6,7 +6,8 @@ import SearchResults from "./SearchResults";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { filteredCities, isFetching, error } = useWeatherData(searchQuery);
+  const { filteredCities, setFilteredCities, isFetching, error } =
+    useWeatherData(searchQuery);
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
@@ -14,6 +15,7 @@ const Header = () => {
 
   const handleCitySelect = () => {
     setSearchQuery("");
+    setFilteredCities([]);
   };
 
   return (
